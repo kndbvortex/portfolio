@@ -1,3 +1,46 @@
+AOS.init({
+    duration: 1000,
+})
+
+// Loader
+window.addEventListener('load', function() {
+    var loader = document.querySelector('.loader');
+
+    function fadeOut(element, duration, callback) {
+        var opacity = 1;
+        var interval = 50;
+        var delta = interval / duration;
+
+        var fadeOutTimer = setInterval(function() {
+            if (opacity <= 0) {
+                clearInterval(fadeOutTimer);
+                element.style.display = 'none';
+                if (callback) {
+                    callback();
+                }
+            }
+
+            element.style.opacity = opacity;
+            opacity -= delta;
+        }, interval);
+    }
+
+    fadeOut(loader, 1000);
+});
+
+// Hamburger menu
+document.querySelector('.hamburger-menu')
+    .addEventListener('click', function () {
+        document.querySelector("#menu").classList.toggle('hidden');
+        // document.querySelector("nav").classList.remove('bg-transparent');
+        document.querySelector("nav").classList.add('bg-white');
+
+        // document.querySelector("#menu").classList.toggle('w-screen');
+        document.querySelector(".bar-middle").classList.toggle('bar-middle-click');
+        document.querySelector(".bar-top").classList.toggle('bar-top-click');
+        document.querySelector(".bar-bottom").classList.toggle('bar-bottom-click');
+    });
+
 particlesJS("particles-js", {
     particles: {
         number: { value: 230, density: { enable: true, value_area: 800 } },
@@ -135,21 +178,21 @@ const header = document.querySelector('header');
 const navHeight = nav.getBoundingClientRect().height;
 
 function updateNavColor(entries) {
-  const [entry] = entries;
-  if(!entry.isIntersecting) {
-    nav.classList.add("bg-white");
-    nav.classList.remove("bg-transparent");
-  } else {
-    nav.classList.add("bg-transparent");
-    nav.classList.remove("bg-white");
-  }
-  
+    const [entry] = entries;
+    if (!entry.isIntersecting) {
+        nav.classList.add("bg-white");
+        nav.classList.remove("bg-transparent");
+    } else {
+        nav.classList.add("bg-transparent");
+        nav.classList.remove("bg-white");
+    }
+
 }
 
 const headerObserver = new IntersectionObserver(updateNavColor, {
-  root: null,
-  threshold: 0,
-  rootMargin: `-${navHeight}px`
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`
 });
 
 headerObserver.observe(header)
