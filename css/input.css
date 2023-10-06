@@ -10,14 +10,17 @@
   --primary-rgb: 255, 193, 7;
 }
 
-/* *{
-  box-shadow: 0 0 0 3px red inset;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Roboto&display=swap');
+*{
+  font-family: 'Roboto';
+}
+  /* *{
+    box-shadow: 0 0 0 3px red inset;
+  } */
 
 html {
   scroll-behavior: smooth;
 }
-
 /* Loader */
 .loader {
 	position: fixed;
@@ -79,7 +82,6 @@ html {
 
 canvas {
   z-index: 0;
-
   display: block;
   position: absolute;
   top: 0px;
@@ -93,7 +95,7 @@ canvas {
 /* ---- particles.js container ---- */
 
 #particles-js {
-  width: 100%;
+  width: 80%;
   background-color: var(--beige);
   background-image: url("");
   background-repeat: no-repeat;

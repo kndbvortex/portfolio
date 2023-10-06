@@ -738,10 +738,6 @@ video {
   width: 2.25rem;
 }
 
-.w-\[100vw\] {
-  width: 100vw;
-}
-
 .w-\[200px\] {
   width: 200px;
 }
@@ -752,10 +748,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[90\%\] {
-  width: 90%;
 }
 
 .min-w-0 {
@@ -920,10 +912,6 @@ video {
   padding-bottom: 1rem;
 }
 
-.pr-0 {
-  padding-right: 0px;
-}
-
 .pr-2 {
   padding-right: 0.5rem;
 }
@@ -1070,9 +1058,13 @@ video {
   --primary-rgb: 255, 193, 7;
 }
 
+*{
+  font-family: 'Roboto';
+}
+
 /* *{
-  box-shadow: 0 0 0 3px red inset;
-} */
+    box-shadow: 0 0 0 3px red inset;
+  } */
 
 html {
   scroll-behavior: smooth;
@@ -1157,7 +1149,7 @@ canvas {
 /* ---- particles.js container ---- */
 
 #particles-js {
-  width: 100%;
+  width: 80%;
   background-color: var(--beige);
   background-image: url("");
   background-repeat: no-repeat;
