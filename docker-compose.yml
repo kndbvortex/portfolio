@@ -1,0 +1,9 @@
+version: '3'
+services:
+  portfolio:
+    build: .
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      - ./:/usr/share/nginx/html
