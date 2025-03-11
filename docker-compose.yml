@@ -1,36 +1,46 @@
 version: '3'
 
 services:
-  portfolio:
-    build: .
-    expose:
-      - "8000"
-    restart: unless-stopped
+  traefik:
+    image: traefik:v2.10
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
     volumes:
-      - ./:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/traefik.toml:/etc/traefik/traefik.toml
+      - ./traefik/acme.json:/acme.json
+    networks:
+      - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portfolio.rule=Host(`localhost`)"
-      - "traefik.http.routers.portfolio.entrypoints=web"
-      - "traefik.http.services.portfolio.loadbalancer.server.port=8000"
-    networks:
-      - traefik-network
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.kndbvortex.cloud`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.entrypoints=websecure"
+      - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
+      - "traefik.http.middlewares.auth.basicauth.users=admin:$apr1$A3k53h7Z$OlYdJXUoCwpc4i2YXucfc/"  # Use htpasswd to generate
+      - "traefik.http.routers.dashboard.middlewares=auth@docker"
 
-  traefik:
-    image: traefik:v2.9
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:8000"
-    ports:
-      - "8000:8000"
-      - "8080:8080"  # Traefik dashboard
+  website:
+    image: nginx:alpine
+    restart: always
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ./website:/usr/share/nginx/html
     networks:
-      - traefik-network
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.website.rule=Host(`kndbvortex.cloud`)"
+      - "traefik.http.routers.website.entrypoints=websecure"
+      - "traefik.http.routers.website.tls.certresolver=letsencrypt"
+      # Redirect HTTP to HTTPS
+      - "traefik.http.routers.website-http.rule=Host(`kndbvortex.cloud`)"
+      - "traefik.http.routers.website-http.entrypoints=web"
+      - "traefik.http.routers.website-http.middlewares=redirect-to-https@docker"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
 networks:
-  traefik-network:
-    driver: bridge
+  web:
+    external: true
