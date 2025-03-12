@@ -1,8 +1,7 @@
-version: '3'
-
 services:
   traefik:
-    image: traefik:v2.10
+    image: traefik:v3.3
+    container_name: traefik
     restart: always
     ports:
       - "80:80"
@@ -20,12 +19,12 @@ services:
       - "traefik.http.routers.dashboard.service=api@internal"
       - "traefik.http.routers.dashboard.entrypoints=websecure"
       - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
-      - "traefik.http.middlewares.auth.basicauth.users=admin:$apr1$A3k53h7Z$OlYdJXUoCwpc4i2YXucfc/"  # Use htpasswd to generate
-      - "traefik.http.routers.dashboard.middlewares=auth@docker"
+      
 
   website:
     image: nginx:alpine
     restart: always
+    container_name: portfolio
     volumes:
       - ./website:/usr/share/nginx/html
     networks:
