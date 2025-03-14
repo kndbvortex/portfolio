@@ -4,119 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind CSS Loading Animation</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>Scientific Papers Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom animation for spinner */
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .custom-spin {
-            animation: spin 1s linear infinite;
-        }
-
-        /* Pulse animation for dots */
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(1.3);
-                opacity: 0.7;
-            }
-        }
-
-        .custom-pulse {
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        /* Fade out animation */
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }
-
-        .fade-out {
-            animation: fadeOut 0.5s ease-out forwards;
-        }
-
-        /* Hide element */
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 
-<body class="bg-gray-100 h-screen">
-    <!-- Content that appears after loading -->
-    <div id="content" class="hidden h-full flex items-center justify-center">
-        <div class="text-center">
-            <h1 class="text-3xl font-bold text-gray-800">Page Loaded Successfully!</h1>
-            <p class="mt-4 text-gray-600">Your content is now ready</p>
-        </div>
-    </div>
+<body class="bg-gray-100 p-10">
 
-    <!-- Loading overlay -->
-    <div id="loading-screen" class="fixed inset-0 bg-gray-100 flex items-center justify-center z-50">
-        <div class="text-center">
-            <!-- Loading text -->
-            <h2 class="text-xl text-gray-700 font-semibold mb-4">Loading</h2>
+    <h1 class="text-3xl font-bold text-center mb-6">Scientific Papers Hub</h1>
 
-            <!-- Spinner animation -->
-            <div class="flex justify-center mb-6">
-                <div class="custom-spin w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full"></div>
-            </div>
-
-            <!-- Pulsing dots animation -->
-            <div class="flex justify-center space-x-2">
-                <div class="w-3 h-3 bg-blue-500 rounded-full custom-pulse" style="animation-delay: 0ms;"></div>
-                <div class="w-3 h-3 bg-blue-500 rounded-full custom-pulse" style="animation-delay: 300ms;"></div>
-                <div class="w-3 h-3 bg-blue-500 rounded-full custom-pulse" style="animation-delay: 600ms;"></div>
-            </div>
-        </div>
-    </div>
+    <div id="papers-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
 
     <script>
-        // Function to hide loading screen and show content
-        function hideLoading() {
-            const loadingScreen = document.getElementById('loading-screen');
-            const content = document.getElementById('content');
+        async function loadPapers() {
+            try {
+                const response = await fetch('/data/publications.json');
+                const papers = await response.json();
+                const container = document.getElementById('papers-container');
 
-            // Add fade out animation to loading screen
-            loadingScreen.classList.add('fade-out');
+                papers.forEach(paper => {
+                    const card = document.createElement('a');
+                    card.href = paper.link;
+                    card.target = "_blank";
+                    card.className = "block bg-white p-5 rounded-2xl shadow-lg transition-transform transform hover:-translate-y-1";
 
-            // After animation completes, hide loading screen and show content
-            setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-                content.classList.remove('hidden');
-            }, 500); // matches the fadeOut animation duration
+                    card.innerHTML = `
+                        <img src="${paper.image}" class="w-full h-48 object-cover rounded-lg">
+                        <h2 class="text-lg font-semibold mt-3">${paper.title}</h2>
+                        <p class="text-sm text-gray-600">${paper.author} - ${paper.year}</p>
+                        <p class="text-xs text-gray-500 mt-2">${paper.abstract.substring(0, 100)}...</p>
+                        <span class="block mt-3 text-blue-600 hover:underline">Read More</span>
+                    `;
+
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Error loading papers:", error);
+            }
         }
 
-        // Hide loading screen when page is fully loaded
-        window.addEventListener('load', () => {
-            // Add a small delay to make the loading animation visible (optional)
-            // Remove this setTimeout to hide immediately when loaded
-            setTimeout(hideLoading, 1000);
-        });
-
-        // If page is already loaded when script runs
-        if (document.readyState === 'complete') {
-            setTimeout(hideLoading, 1000);
-        }
+        loadPapers();
     </script>
+
 </body>
 
 </html>
