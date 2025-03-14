@@ -83,3 +83,29 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement.classList.remove("dark");
   }
 });
+
+document.addEventListener("click", function (event) {
+  // Check if the clicked element is a link with a hash
+  const link = event.target.closest('a[href^="#"]');
+
+  if (link) {
+    // Get the target element
+    const targetId = link.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      // Prevent default behavior
+      event.preventDefault();
+
+      // Calculate the position (element position minus 200px)
+      const position =
+        targetElement.getBoundingClientRect().top + window.scrollY - 100;
+
+      // Scroll to that position
+      window.scrollTo({
+        top: position,
+        behavior: "smooth",
+      });
+    }
+  }
+});
