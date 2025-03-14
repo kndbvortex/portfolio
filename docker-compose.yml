@@ -31,11 +31,11 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.website.rule=Host(`kndbvortex.cloud`)"
+      - "traefik.http.routers.website.rule=Host(`kndbvortex.cloud`) || Host(`www.kndbvortex.cloud`)"
       - "traefik.http.routers.website.entrypoints=websecure"
       - "traefik.http.routers.website.tls.certresolver=letsencrypt"
       # Redirect HTTP to HTTPS
-      - "traefik.http.routers.website-http.rule=Host(`kndbvortex.cloud`)"
+      - "traefik.http.routers.website-http.rule=Host(`kndbvortex.cloud`)|| Host(`www.kndbvortex.cloud`)"
       - "traefik.http.routers.website-http.entrypoints=web"
       - "traefik.http.routers.website-http.middlewares=redirect-to-https@docker"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
