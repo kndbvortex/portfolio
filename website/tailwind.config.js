@@ -10,6 +10,14 @@ module.exports = {
           900: "#18181b",
         },
       },
+      animation: {
+        "custom-animation": "bounce 1s infinite",
+      },
+      animationDelay: {
+        0: "0ms",
+        300: "300ms",
+        600: "600ms",
+      },
     },
   },
   plugins: [],

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/
+Disallow: /data/
+Allow: /
+Sitemap: https://www.kndbvortex.cloud/sitemap.xml

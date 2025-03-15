@@ -17,7 +17,7 @@ async function loadPapers() {
       card.innerHTML = `
                         <img src="${
                           paper.image
-                        }" class="w-full h-48 object-cover rounded-lg">
+                        }" class="w-full h-48 object-cover rounded-lg" alt="${paper.title}">
                         <h2 class="text-lg font-semibold mt-3">${
                           paper.title
                         }</h2>

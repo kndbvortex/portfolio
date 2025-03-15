@@ -697,6 +697,9 @@ video {
 .block {
   display: block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
@@ -810,6 +813,12 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[70\%\] {
+  width: 70%;
+}
+.w-\[92\%\] {
+  width: 92%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1437,6 +1446,9 @@ video {
 }
 .delay-0 {
   transition-delay: 0s;
+}
+.delay-300 {
+  transition-delay: 300ms;
 }
 .duration-150 {
   transition-duration: 150ms;
