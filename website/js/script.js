@@ -165,23 +165,27 @@ function toggleDarkMode() {
 
 // Check for saved dark/light mode preference based on user system preference
 document.addEventListener("DOMContentLoaded", function () {
-  if(localStorage.getItem("darkMode") === null) {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+});
+
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", function (e) {
     if (
-      window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-    return;
-  }
-  if (localStorage.getItem("darkMode") === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-});
+  });
 
 document.addEventListener("DOMContentLoaded", function () {
   const floatingNav = document.getElementById("floating-nav");
