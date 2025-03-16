@@ -1,24 +1,3 @@
-// Dark mode toggle
-function toggleDarkMode() {
-  document.documentElement.classList.toggle("dark");
-  localStorage.setItem(
-    "darkMode",
-    document.documentElement.classList.contains("dark")
-  );
-}
-
-// Initialize dark mode from saved preference
-document.addEventListener("DOMContentLoaded", () => {
-  const savedMode = localStorage.getItem("darkMode");
-  if (
-    savedMode === "true" ||
-    (savedMode === null &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-  }
-});
-
 // Modal menu toggle
 function toggleModalMenu() {
   const modalMenu = document.getElementById("modal-menu");
@@ -67,24 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Toggle dark mode function if needed
-function toggleDarkMode() {
-  document.documentElement.classList.toggle("dark");
-  const isDark = document.documentElement.classList.contains("dark");
-  localStorage.setItem("darkMode", isDark ? "dark" : "light");
-}
-
-// Check for saved dark/light mode preference
-document.addEventListener("DOMContentLoaded", function () {
-  const savedTheme = localStorage.getItem("darkMode");
-  if (savedTheme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-});
-
-
 // ajust the view for to anchor links
 document.addEventListener("click", function (event) {
   // Check if the clicked element is a link with a hash
@@ -111,7 +72,6 @@ document.addEventListener("click", function (event) {
     }
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   AOS.init({
@@ -197,19 +157,32 @@ document.addEventListener("DOMContentLoaded", function () {
 // Toggle dark mode function if needed
 function toggleDarkMode() {
   document.documentElement.classList.toggle("dark");
+  console.log("Hype");
+
   const isDark = document.documentElement.classList.contains("dark");
   localStorage.setItem("darkMode", isDark ? "dark" : "light");
 }
 
-// Check for saved dark/light mode preference
+// Check for saved dark/light mode preference based on user system preference
 document.addEventListener("DOMContentLoaded", function () {
-  const savedTheme = localStorage.getItem("darkMode");
-  if (savedTheme === "dark") {
+  if(localStorage.getItem("darkMode") === null) {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    return;
+  }
+  if (localStorage.getItem("darkMode") === "dark") {
     document.documentElement.classList.add("dark");
   } else {
     document.documentElement.classList.remove("dark");
   }
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const floatingNav = document.getElementById("floating-nav");
   let lastScrollTop = 0;

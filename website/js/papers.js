@@ -12,7 +12,7 @@ async function loadPapers() {
       card.href = paper.link;
       card.target = "_blank";
       card.className =
-        "block bg-white p-5 rounded-2xl shadow-lg transition-transform transform hover:-translate-y-1";
+        "block bg-white p-5 rounded-2xl shadow-lg transition-transform transform hover:-translate-y-1 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white";
 
       card.innerHTML = `
                         <img src="${
