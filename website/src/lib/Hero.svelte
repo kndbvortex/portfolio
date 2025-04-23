@@ -7,7 +7,7 @@
 <div class="sm:px-8 mt-9">
     <div class="mx-auto w-full max-w-7xl lg:px-8">
         <!-- Main container with flex layout -->
-        <div class="flex flex-col sm:flex-row-reverse items-center sm:items-start gap-8">
+        <div class="flex flex-col sm:flex-row-reverse items-center sm:items-start gap-8" id="about">
             <!-- Image container - full width on small screens, left-aligned on medium+ -->
             <div class="w-full sm:w-1/3 px-2.5">
                 <BlurFade delay={0.25}>

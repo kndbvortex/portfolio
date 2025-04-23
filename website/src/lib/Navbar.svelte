@@ -9,8 +9,11 @@
     }
 
     function toggleModalMenu() {
-        document.getElementById("modal-menu").classList.toggle("hidden");
-        document.body.classList.toggle("overflow-hidden");
+        const modalMenu = document.getElementById("modal-menu");
+        if (modalMenu) {
+            modalMenu.classList.toggle("hidden");
+            document.body.classList.toggle("overflow-hidden");
+        }
     }
 
     // Reactive variable to track visibility
@@ -134,7 +137,7 @@
             <nav class="mt-6">
                 <ul class="divide-y divide-zinc-100 dark:divide-zinc-800/5">
                     <li>
-                        <a href="/"
+                        <a href="#about"
                            class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-cyan-500 dark:hover:text-cyan-400"
                            onclick={toggleModalMenu}>
                             About

@@ -1,34 +1,44 @@
 <script lang="ts">
-  import "./app.css";
-  import Header from './lib/Navbar.svelte'
-  import Footer from "$lib/Footer.svelte";
-  import Hero from "$lib/Hero.svelte";
-  import SectionSep from "$lib/SectionSep.svelte";
-  import Projects from "$lib/Projects.svelte";
-  import Resume from "$lib/Resume.svelte";
-  import Publications from "$lib/Publications.svelte";
-  import Contact from "$lib/Contact.svelte";
+  import { currentRoute, navigate } from './lib/router';
+  import { fade } from 'svelte/transition';
+  import { cubicOut } from 'svelte/easing';
 
+  import HomePage from '$lib/pages/Home.svelte';
+  import ProjectsPage from '$lib/pages/Projects.svelte';
+  import PublicationPage from '$lib/pages/Publications.svelte';
+
+  type RouteMap = {
+    [key: string]: typeof HomePage | typeof ProjectsPage | typeof PublicationPage;
+  };
+
+  // Map routes to components
+  const routes: RouteMap = {
+    '/': HomePage,
+    '/publications': PublicationPage,
+    '/projects': ProjectsPage
+  };
+
+  // Transition configuration
+  const pageTransition = {
+    duration: 200,
+    easing: cubicOut
+  };
+
+  // Get the component for the current route
+  $: Component = routes[$currentRoute] || HomePage;
+
+  // Handle link clicks to use our navigation system
+  function handleLinkClick(e: MouseEvent, path: string) {
+    e.preventDefault();
+    navigate(path);
+  }
 </script>
 
+<div class="app-container">
 
-<Header/>
-<main class="flex-auto dark:text-gray-400">
-
-    <Hero />
-    <SectionSep title="Check out my projects"/>
-    <Projects/>
-    <SectionSep title="Check out my Resume"/>
-    <Resume/>
-    <SectionSep title="Check out my papers"/>
-    <Publications/>
-    <Contact/>
-
-</main>
-
-<Footer />
-
-<style>
-
-</style>
-
+  <main>
+    <div class="page-container" in:fade={pageTransition} out:fade={pageTransition}>
+      <svelte:component this={Component} />
+    </div>
+  </main>
+</div>
