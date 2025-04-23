@@ -1,6 +1,5 @@
 <script lang="ts">
 //   import "./app.css";
-  import Header from "$lib/Navbar.svelte";
   import Footer from "$lib/Footer.svelte";
   import Projects from "$lib/Projects.svelte";
   import Prev from "$lib/Prev.svelte";
