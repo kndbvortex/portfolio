@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Une nouvelle approche pour la génération efficace des motifs graduels",
+    "author": "Durande Kamga Nguifo , Jerry Lonlac , Anthony Fleury , Engelbert Mephu Nguifo",
+    "year": 2025,
+    "category": "Data Mining",
+    "image": "/images/papers/graduel_2025.png",
+    "abstract": "Les motifs graduels mettent en évidence des corrélations entre différents attributs grâce à des règles de la forme 'plus/moins X, plus/moins Y' avec X et Y des attributs. Ces motifs représentent des connaissances précieuses pour les experts. Dans la littérature, de nombreuses méthodes permettent de les extraire en s'appuyant sur une représentation binaire des motifs. Bien que certaines de ces méthodes permettent des traitements en parallèle, elles consomment beaucoup de ressources (temps CPU et mémoire). Dans cet article, nous présentons un critère permettant d'élaguer le nombre de motifs candidats entrainant ainsi une réduction de l'espace de recherche. Grâce à des expérimentations menées sur des jeux de données réelles et synthétiques, nous avons comparé l'effet du critère proposé sur les performances de deux algorithmes d'extraction de motifs dans la littérature, GRITE et Paraminer. Les résultats montrent une réduction significative du temps d'exécution.",
+    "link": "https://editions-rnti.fr/?inprocid=1002999"
+  },
+  {
+    "title": "SEDAF : Prototype d'un Système Explicable de Détection d'Anomalies dans les Flux de Données",
+    "author": "F. Jiechieu Kameni, A. M. S. Ngo Bibinbe, V. Cako, A. J. Djiberou Mahamadou, M. R. Bakari, K. D. Nguetche, D. Kamga Nguifo, A. Bertrand, M. F. Mbouopda, R. El Cheikh, G. R. Mbiadou Saleu, E. Mephu Nguifo",
+    "year": 2024,
+    "category": "Time Series",
+    "image": "/images/papers/sedaf.png",
+    "abstract": "La détection d'anomalies fait référence à l'identification des évènements rares qui diffèrent grandement de la tendance normale et majoritaire observée dans la distribution des données. Lorsque le nombre de variables à analyser est important, il peut être difficile de comprendre l'anomalie détectée sans explication. Dans ce travail, nous présentons le prototype d'un système explicable de monitoring et de détection d'anomalies en temps réel, à partir de mesures provenant d'un flux de données. Le système construit est composé d'une combinaison de méthodes de détection d'anomalies alliant apprentissage profond et arbres de décision ainsi que d'une méthode d'explicabilité agnostique. Dans un contexte d'apprentissage non supervisé, nous montrons également comment l'explicabilité fournit des éléments de validation du système en combinaison avec les retours des experts du domaine.",
+    "link": "https://editions-rnti.fr/?inprocid=1002962"
+  }
+]
