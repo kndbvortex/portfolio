@@ -8,12 +8,13 @@
   import Resume from "$lib/Resume.svelte";
   import Publications from "$lib/Publications.svelte";
   import Contact from "$lib/Contact.svelte";
+  import Loading from "$lib/components/Loading.svelte";
 
 </script>
 
-
 <Header/>
 <main class="flex-auto dark:text-gray-400">
+<!--    <Loading/>-->
     <Hero />
     <SectionSep title="Check out my projects"/>
     <Projects visibleallprojectsbtn={true}/>

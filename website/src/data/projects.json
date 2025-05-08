@@ -3,30 +3,35 @@
     "image": "/images/projects/Farmadi.png",
     "title": "Farmadi.api",
     "description": "API backend",
-    "link": "https://farmadi.kndbvortex.cloud/api/documentation"
+    "link": "https://farmadi.kndbvortex.cloud/api/documentation",
+    "tools": "Django, DRF, Docker, PostgresSQL, Redis, Celery"
   },
   {
     "image": "/images/projects/build gantt.png",
     "title": "Gantt",
     "description": "Draw your gantt diagram",
-    "link": "https://gantt.kndbvortex.cloud/"
+    "link": "https://gantt.kndbvortex.cloud/",
+    "tools": "HTML, Tailwind, Chart.js"
   },
   {
     "image": "/images/projects/infolab.png",
     "title": "Infolab",
     "description": "Infolab Website",
-    "link": "https://infolab-tech.com/"
+    "link": "https://infolab-tech.com/",
+    "tools": "HTML, Bootsrap"
   },
   {
     "image": "/images/projects/infox.jpg",
     "title": "Infox",
     "description": "A Simple fake news detector",
-    "link": "#"
+    "link": "#",
+    "tools": "Django, NLTK, Scikit-learn"
   },
   {
     "image": "/images/projects/DASMA.png",
     "title": "Drift",
     "description": "A Concept drift for anomaly detection",
-    "link": "https://dasma.limos.fr/"
+    "link": "https://dasma.limos.fr/",
+    "tools": "Flask, Tensorflow, Aeon"
   }
 ]

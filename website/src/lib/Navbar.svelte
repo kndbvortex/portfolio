@@ -55,7 +55,7 @@
                             type="button" aria-expanded="false">
                         Menu
                         <svg viewBox="0 0 8 6" aria-hidden="true"
-                             class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400">
+                             class="ml-3 h-auto w-2 stroke-[#0B68FD] group-hover:stroke-[#0B68FD] dark:group-hover:stroke-[#0B68FD]">
                             <path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" stroke-width="1.5" stroke-linecap="round"
                                   stroke-linejoin="round"></path>
                         </svg>
@@ -70,24 +70,24 @@
                 <nav class="hidden md:block">
                     <ul
                             class="flex rounded-full bg-white/90 px-3 font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-                        <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                        <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                                href="#about">About</a></li>
-                        <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                        <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                                href="#resume">Resume</a></li>
-                        <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                        <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                                href="#projects">Projects</a></li>
-                        <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                        <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                                href="#contact">Contact</a></li>
                     </ul>
                 </nav>
 
                 <!-- Dark Mode Toggle -->
                 <button onclick={toggleDarkMode} type="button" aria-label="Toggle dark mode"
-                        class="rounded-full bg-white/90 p-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
+                        class="hover:scale-105 hover:shadow-md hover:shadow-foreground rounded-full bg-white/90 p-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
                     <!-- Sun icon (shown in dark mode) -->
                     <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                          aria-hidden="true"
-                         class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden">
+                         class="h-6 w-6 fill-zinc-100 stroke-[#F9ED15] transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 hover:shadow-[#F9ED15] hover:scale-105 dark:hidden">
                         <path
                                 d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z">
                         </path>
@@ -97,7 +97,7 @@
                     </svg>
                     <!-- Moon icon (shown in light mode) -->
                     <svg viewBox="0 0 24 24" aria-hidden="true"
-                         class="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block">
+                         class="hidden h-6 w-6 fill-zinc-700 stroke-[#0B68FD] transition dark:block">
                         <path
                                 d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -122,7 +122,7 @@
                 class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800">
             <div class="flex flex-row-reverse items-center justify-between">
                 <button type="button" aria-label="Close menu"
-                        class="rounded-md p-1 text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300"
+                        class="rounded-md p-1 text-[#0B68FD] hover:text-zinc-600 dark:text-[#0B68FD] dark:hover:text-zinc-300"
                         onclick={toggleModalMenu}>
                     <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -130,7 +130,7 @@
                         </path>
                     </svg>
                 </button>
-                <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Navigation</h2>
+                <h2 class="text-sm font-medium text-zinc-600 dark:text-[#0B68FD]">Navigation</h2>
             </div>
 
             <!-- Navigation links -->
@@ -138,28 +138,28 @@
                 <ul class="divide-y divide-zinc-100 dark:divide-zinc-800/5">
                     <li>
                         <a href="#about"
-                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-cyan-500 dark:hover:text-cyan-400"
+                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                            onclick={toggleModalMenu}>
                             About
                         </a>
                     </li>
                     <li>
                         <a href="#resume"
-                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-cyan-500 dark:hover:text-cyan-400"
+                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                            onclick={toggleModalMenu}>
                             Resume
                         </a>
                     </li>
                     <li>
                         <a href="#projects"
-                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-cyan-500 dark:hover:text-cyan-400"
+                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                            onclick={toggleModalMenu}>
                             Projects
                         </a>
                     </li>
                     <li>
                         <a href="#contact"
-                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-cyan-500 dark:hover:text-cyan-400"
+                           class="flex items-center py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                            onclick={toggleModalMenu}>
                             Contact
                         </a>
@@ -177,13 +177,13 @@
                 class="flex items-center justify-between rounded-full bg-white/90 px-6 py-2 shadow-lg shadow-zinc-800/10 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
             <!-- Desktop Navigation -->
             <ul class="hidden md:flex font-medium text-zinc-800 dark:text-zinc-200">
-                <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                        href="#about">About</a></li>
-                <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                        href="#resume">Resume</a></li>
-                <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                        href="#projects">Projects</a></li>
-                <li><a class="relative block px-3 py-2 transition hover:text-cyan-500 dark:hover:text-cyan-400"
+                <li><a class="relative block px-3 py-2 transition hover:text-[#0B68FD] dark:hover:text-[#0B68FD]"
                        href="#contact">Contact</a></li>
             </ul>
 
@@ -194,7 +194,7 @@
                         type="button" aria-expanded="false">
                     Menu
                     <svg viewBox="0 0 8 6" aria-hidden="true"
-                         class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400">
+                         class="ml-3 h-auto w-2 stroke-[#0B68FD] group-hover:stroke-zinc-700 dark:group-hover:stroke-[#0B68FD]">
                         <path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" stroke-width="1.5" stroke-linecap="round"
                               stroke-linejoin="round"></path>
                     </svg>
@@ -207,7 +207,7 @@
                 <!-- Sun/Moon icons -->
                 <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                      aria-hidden="true"
-                     class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden">
+                     class="h-6 w-6 fill-zinc-100 stroke-[#0B68FD] transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden">
                     <path
                             d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z">
                     </path>
@@ -216,7 +216,7 @@
                             fill="none"></path>
                 </svg>
                 <svg viewBox="0 0 24 24" aria-hidden="true"
-                     class="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block">
+                     class="hidden h-6 w-6 fill-zinc-700 stroke-[#0B68FD] transition dark:block">
                     <path
                             d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>

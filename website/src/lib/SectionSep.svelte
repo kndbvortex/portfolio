@@ -1,5 +1,6 @@
 <script lang="ts">
     let {title} = $props();
+
 </script>
 <div class="relative my-20">
     <div class="relative w-full pl-5 overflow-x-hidden md:pl-0">
@@ -9,8 +10,8 @@
         <div class="w-full h-px border-t border-dashed border-neutral-300 dark:border-neutral-600"></div>
     </div>
     <div
-            class="absolute flex items-center justify-center w-auto h-auto px-3 py-1.5 uppercase tracking-widest space-x-1 text-[0.6rem] md:-translate-x-1/2 -translate-y-1/2 border rounded-full bg-white dark:bg-neutral-900 text-neutral-400 left-0 md:ml-0 ml-5 md:left-1/2 border-neutral-100 dark:border-neutral-800 shadow-sm">
-        <p class="leading-none">{title}</p>
+            class="font-SpaceGrotesk absolute flex items-center justify-center w-auto h-auto px-3 py-1.5 uppercase tracking-widest space-x-1 text-[0.6rem] md:-translate-x-1/2 -translate-y-1/2 border rounded-xl bg-background text-foreground font-bold left-0 md:ml-0 ml-5 md:left-1/2 border-neutral-100 dark:border-neutral-800 shadow-sm">
+        <p class="leading-none section-sep">{title}</p>
         <div
                 class="flex items-center justify-center w-5 h-5 translate-x-1 border rounded-full border-neutral-100 dark:border-neutral-800">
             <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

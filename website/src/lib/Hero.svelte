@@ -1,6 +1,52 @@
 <script>
     import BlurFade from "./BlurFade.svelte";
-    import Particles from "$lib/Particles.svelte";
+    import gsap from "gsap";
+    import scrollTrigger from "gsap/ScrollTrigger";
+    import {onMount} from "svelte";
+
+    gsap.registerPlugin(scrollTrigger);
+    onMount(() => {
+        const img = document.getElementById("img-card-hero");
+        gsap.set("#img-card-hero", {
+            transformStyle: "preserve-3d",
+            transformPerspective: 500
+        });
+        gsap.set("#img-card-hero", {
+            transformStyle: "preserve-3d",
+            transformOrigin: "50% 50%",
+        });
+
+        const timing = 1;
+
+        const tl = gsap.timeline({paused: true});
+        tl.to("#img-card-hero", {rotationY: "+=180", duration: timing});
+        tl.to("#img-card-hero", {z: 50, duration: timing / 2, yoyo: true, repeat: 1}, 0);
+
+        gsap.utils.toArray("#img-card-hero").forEach(flip => {
+            flip.addEventListener("mouseenter", event => tl.play());
+            flip.addEventListener("mouseleave", event => tl.reverse());
+        });
+
+        if (img) {
+            gsap.from(img, {
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 80%", // when the top of the element hits 80% from top of viewport
+                    toggleActions: "play restart none restart" // play on enter, nothing on leave, etc.
+
+                },
+                duration: 1,
+                rotate: 180,
+                y: 100,
+                x: -100,
+                scale: 0.5,
+                yoyo: true,
+                repeat: 2,
+                opacity: 0,
+                ease: "fade.in"
+            });
+        }
+    });
 </script>
 
 
@@ -12,9 +58,10 @@
             <div class="w-full sm:w-1/3 px-2.5">
                 <BlurFade delay={0.25}>
                     <img
+                            id="img-card-hero"
                             alt="Profile"
                             loading="lazy"
-                            class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 mx-auto sm:mx-0"
+                            class="hover:cursor-pointer aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 mx-auto sm:mx-0"
                             sizes="(min-width: 1024px) 32rem, 20rem"
                             src="/images/casque%20vr.jpg"
                             style="color: transparent"/>
@@ -25,9 +72,9 @@
             <!-- Content container - full width on small screens, right side on medium+ -->
             <div class="w-full sm:w-2/3 px-4 relative">
                 <div class="z-50 mx-auto max-w-2xl lg:max-w-5xl">
-                    <div class="max-w-2xl">
+                    <div class="max-w-2xl font-Inter">
                         <BlurFade delay={0.25}>
-                            <h1 class="text-3xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+                            <h1 class="title-font text-5xl font-bold tracking-tight text-primary sm:text-5xl font-SpaceGrotesk">
                                 Hi
                                 I'm
                                 Durande Kamga, <br> <span class="text-lg md:text-3xl">Developer | Data scientist | XAI
@@ -44,9 +91,10 @@
                                 Beyond tech, I'm into anime, running, and gaming. <br/>Let's create something awesome!
                             </p>
                             <div>
-                                <Particles className="absolute inset-0 z-10 top-[-500px]" quantity={300}/>
+                                <!--                                <Particles className="absolute inset-0 z-10 top-[-500px]" quantity={300}/>-->
                                 <div class="z-20 mt-6 flex flex-wrap items-center justify-start gap-6 relative">
-                                    <a class="group rounded-full m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" aria-label="Follow on X" target="_blank"
+                                    <a class="group rounded-full m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+                                       aria-label="Follow on X" target="_blank"
                                        href="https://x.com/DurandeKamga_">
                                         <svg viewBox="0 0 24 24" aria-hidden="true"
                                              class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300">
@@ -55,7 +103,8 @@
                                             </path>
                                         </svg>
                                     </a>
-                                    <a class="group rounded-full -m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" aria-label="Follow on GitHub" target="_blank"
+                                    <a class="group rounded-full -m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+                                       aria-label="Follow on GitHub" target="_blank"
                                        href="https://github.com/kndbvortex">
                                         <svg viewBox="0 0 24 24" aria-hidden="true"
                                              class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300">
@@ -64,7 +113,8 @@
                                             </path>
                                         </svg>
                                     </a>
-                                    <a class="group rounded-full m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" aria-label="Follow on LinkedIn" target="_blank"
+                                    <a class="group rounded-full m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+                                       aria-label="Follow on LinkedIn" target="_blank"
                                        href="https://linkedin.com/in/durande-kamga-3660bb202">
                                         <svg viewBox="0 0 24 24" aria-hidden="true"
                                              class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300">
@@ -73,7 +123,8 @@
                                             </path>
                                         </svg>
                                     </a>
-                                    <a class="group rounded-full m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" aria-label="Follow on Upwork" target="_blank"
+                                    <a class="group rounded-full m-1 p-1 transition hover:translate-y-[-5px]  hover:translate-x-1 hover:shadow-lg hover:shadow-slate-300 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+                                       aria-label="Follow on Upwork" target="_blank"
                                        href="https://www.upwork.com/freelancers/~01ab827b08d6581cf9">
                                         <svg fill="#000000" viewBox="0 0 24 24" role="img"
                                              xmlns="http://www.w3.org/2000/svg"

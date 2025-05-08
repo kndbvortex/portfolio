@@ -1,6 +1,8 @@
 <script>
     import WordPullUp from "$lib/wordPullUp.svelte";
     import BoxReveal from "$lib/BoxReveal.svelte";
+    import { Input } from "$lib/components/ui/input/index.js";
+  import { Label } from "$lib/components/ui/label/index.js";
 
     let name = '';
     let email = '';
@@ -84,7 +86,7 @@
 <section id="contact" class="max-w-4xl mx-auto px-7 lg:px-0">
     <div class="flex flex-col items-center md:block mt-8">
         <BoxReveal boxColor={"gray-200"} duration={0.2}>
-            <h2 class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100">
+            <h2 class="font-SpaceGrotesk font-bold tracking-normal text-5xl m-3 text-center text-primary">
 
                 <WordPullUp words="Contact"/>
             </h2>
@@ -94,34 +96,28 @@
             If you have any questions, feel free to contact me.
         </p>
     </div>
-    <div class="w-4/5 form m-auto">
+    <div class="w-4/5 form">
         <div>
             <span class="uppercase text-sm text-gray-600 dark:text-gray-300">Full Name</span>
-            <input
-                    id="name"
-                    bind:value={name}
-                    class="w-full bg-gray-400/10 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 dark:text-white"
-                    type="text">
+
+            <Input type="text" class="mt-2" bind:value={name}/>
         </div>
         <div class="mt-8">
             <span class="uppercase text-sm text-gray-600 dark:text-gray-300">Email</span>
-            <input
-                    id="email"
-                    bind:value={email}
-                    class="w-full bg-gray-400/10 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 dark:text-white"
-                    type="text">
+            <Input class="mt-2" bind:value={email}/>
         </div>
         <div class="mt-8">
             <span class="uppercase text-sm text-gray-600 dark:text-gray-300">Message</span>
             <textarea
                     id="message"
                     bind:value={message}
-                    class="w-full h-32 bg-gray-400/10 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline border-2 dark:text-white"></textarea>
-        </div>
+                    class="h-32 mt-2 border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            </textarea>
+		        </div>
         <div class="mt-8">
             <button
                     on:click={handleSubmit}
-                    class="inline-flex w-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
+                    class="inline-flex w-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-xl bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
                     disabled={isLoading}>
                 {isLoading ? 'Sending...' : 'Send Message'}
             </button>

@@ -8,12 +8,12 @@
 
     <div class="flex flex-row justify-between items-center md:items-start mt-8 mb-3">
         <BoxReveal boxColor={"gray-200"} duration={0.2}>
-            <h2 class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100">
+            <h2 class="m-auto text-center font-SpaceGrotesk font-bold tracking-normal text-5xl m-3 text-center text-primary">
 
-                <WordPullUp words="My Resume"/>
+                <WordPullUp words="My Resume" className="text-center"/>
             </h2>
         </BoxReveal>
-        <a class="inline-flex w-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
+        <a class="inline-flex w-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-xl bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
            href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing">Download
             CV
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"

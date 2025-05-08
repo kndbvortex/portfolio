@@ -371,7 +371,7 @@
 >
 	<Tabs
 		propTabs={tabs}
-		contentClassName="rounded-2xl bg-gray-50 p-10 shadow-lg m-auto border dark:bg-gray-900"
+		contentClassName="rounded-2xl bg-background p-10 shadow-lg m-auto border h-[70vh]"
 
 	/>
 </div>

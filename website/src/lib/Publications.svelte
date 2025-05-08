@@ -24,26 +24,26 @@
 {#snippet PublicationComponent(article: Article)}
   <a
     href={article.link}
-    class="block bg-white p-5 mx-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-slate-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-50"
+    class="block bg-background shadow-foreground/80 p-5 mx-3 rounded-xl shadow-sm transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-slate-400 dark:hover:bg-background/50 dark:text-gray-50"
   >
     <img
       src={article.image}
       class="w-full h-48 object-cover rounded-lg"
       alt={article.title}
     />
-    <h2 class="text-lg font-semibold mt-3">{article.title}</h2>
+    <h2 class="text-md font-semi-bold mt-3 font-Inter">{article.title}</h2>
     <p class="text-sm text-gray-600">{article.author} - {article.year}</p>
     <p class="text-xs text-gray-500 mt-2">
       {article.abstract.substring(0, 100)}...
     </p>
-    <span class="block mt-3 text-cyan-500 hover:underline">Read More</span>
+    <span class="font-SpaceGrotesk block mt-3 text-extra-color hover:underline">Read More</span>
   </a>
 {/snippet}
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0" id="papers">
   <BoxReveal boxColor={"gray-200"} duration={0.2}>
     <h2
-      class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100"
+      class="font-SpaceGrotesk font-bold tracking-normal text-5xl m-3 text-center text-primary"
     >
       <WordPullUp words="My Publications" />
     </h2>
