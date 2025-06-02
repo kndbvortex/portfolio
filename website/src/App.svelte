@@ -1,37 +1,170 @@
-<script lang="ts">
-  // import "./app.css";
-  import Header from '$lib/Navbar.svelte'
-  import Footer from "$lib/Footer.svelte";
-  import Hero from "$lib/Hero.svelte";
-  import SectionSep from "$lib/SectionSep.svelte";
-  import Projects from "$lib/Projects.svelte";
-  import Resume from "$lib/Resume.svelte";
-  import Publications from "$lib/Publications.svelte";
-  import Contact from "$lib/Contact.svelte";
-  import Loading from "$lib/components/Loading.svelte";
-  let animationEnded = $state(false);
+<script>
 
+    import Hero from "$lib/components/Hero.svelte";
+    import Projects from "$lib/components/Projects.svelte";
+    import Skill from "$lib/components/Skill.svelte";
+    import Title from "$lib/components/Title.svelte";
+    import WorkExp from "$lib/components/WorkExp.svelte";
+    import Publications from "$lib/components/Publications.svelte";
+    import {onMount} from "svelte";
+    import {gsap} from 'gsap';
+    import {ScrollTrigger} from 'gsap/ScrollTrigger';
+    import Navbar from "$lib/components/Navbar.svelte";
+    import {Toaster} from "$lib/components/ui/sonner/index.js";
+    import Footer from "$lib/components/Footer.svelte";
+
+    onMount(() => {
+
+
+// Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        function initGenericAnimations() {
+            // Pull from left animation - stays visible after first appearance
+            gsap.utils.toArray('.pull-left').forEach(element => {
+                gsap.fromTo(element, {
+                    opacity: 0,
+                    x: -100
+                }, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top",
+                        end: "bottom top",
+                        toggleActions: "restart none none none", // Only play once
+                    }
+                });
+            });
+
+            // Pull from right animation - stays visible
+            gsap.utils.toArray('.pull-right').forEach(element => {
+                gsap.fromTo(element, {
+                    opacity: 0,
+                    x: 100
+                }, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.7,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top bottom-50px",
+                        end: "bottom top",
+                        toggleActions: "restart none restart none", // Only play once
+                        once: true, // Alternative approach
+                    }
+                });
+            });
+
+            // Appear from center - stays visible
+            gsap.utils.toArray('.appear-center').forEach(element => {
+                gsap.fromTo(element, {
+                    opacity: 0,
+                    scale: 0.5
+                }, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top",
+                        end: "bottom",
+                        toggleActions: "play reverse play none" // Only play once
+                    }
+                });
+            });
+        }
+
+// Function to refresh ScrollTrigger (useful for dynamic content)
+        function refreshScrollTrigger() {
+            ScrollTrigger.refresh();
+        }
+
+// Function to manually initialize animations for new elements
+        function initAnimationsForNewElements() {
+            initGenericAnimations();
+        }
+
+        initGenericAnimations()
+    })
 
 </script>
+<div class="vertical-line line-20"></div>
+<div class="vertical-line line-80"></div>
 
-<Header/>
-<main class="flex-auto dark:text-gray-400">
-    <Loading bind:animationEnded={animationEnded} />
-    {#if animationEnded}
-        <Hero />
-        <SectionSep title="Check out my projects"/>
-        <Projects visibleallprojectsbtn={true}/>
-        <SectionSep title="Check out my resume"/>
-        <Resume/>
-        <SectionSep title="Check out my papers"/>
-        <Publications visibleallpapers={true} />
-        <Contact/>
-    {/if}
+<div class="h-0">
+    <Navbar/>
+</div>
+
+<div class="h-[2px] bg-gradient-to-r from-transparent via-gray-50 to-transparent"></div>
+
+
+<main>
+    <Hero/>
+    <Title content="Projects that I have worked on, showcasing my skills in web development and data science."/>
+    <div class="appear-center">
+        <Projects/>
+    </div>
+    <div class="pull-left">
+        <Skill/>
+    </div>
+
+    <Title content="My career journey and technical expertise"/>
+    <div class="m-auto flex justify-center items-center gap-4 my-10">
+
+        <a class="inline-flex m-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-white text-neutral-900  hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
+           href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing" target="_blank">Download
+            CV
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                 class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50">
+                <path d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+            </svg>
+        </a>
+    </div>
+
+    <div class="pull-right">
+        <WorkExp/>
+    </div>
+    <Title content="Scientific publications"/>
+    <div class="">
+        <Publications/>
+    </div>
 
 </main>
-<Footer />
+<Footer/>
+<Toaster/>
 
 <style>
+    .vertical-line {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 0.05rem;
+        z-index: 1000;
+        /*background-color: #9CA3AF;*/
+        background: linear-gradient(transparent 0%, gray 10%, gray 50%, transparent 90%);
+    }
 
+    .line-20 {
+        left: 7%;
+    }
+
+    .line-80 {
+        left: 93%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .line-20 {
+            left: 0;
+        }
+
+        .line-80 {
+            left: 0;
+        }
+    }
 </style>
-

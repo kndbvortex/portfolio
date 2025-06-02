@@ -1,0 +1,42 @@
+[
+  {
+    "image": "/images/projects/Farmadi.png",
+    "title": "Farmadi",
+    "description": "API backend for farm",
+    "link": "https://farmadi.kndbvortex.cloud/api/documentation",
+    "tools": "Django, DRF, Docker, PostgresSQL, Redis, Celery",
+    "tag_familly": "Web"
+  },
+  {
+    "image": "/images/projects/build gantt.png",
+    "title": "Gantt Drawer",
+    "description": "Schedule your project efficiently",
+    "link": "https://gantt.kndbvortex.cloud/",
+    "tools": "HTML, Tailwind, Chart.js",
+    "tag_familly": "Web"
+  },
+  {
+    "image": "/images/projects/infolab.png",
+    "title": "Infolab",
+    "description": "Landing page to present Infolab",
+    "link": "https://infolab-tech.com/",
+    "tools": "HTML, Bootsrap",
+    "tag_familly": "Web"
+  },
+  {
+    "image": "/images/projects/infox.jpg",
+    "title": "Infox",
+    "description": "A Simple fake news detector on Twitter",
+    "link": "#",
+    "tools": "Django, NLTK, Scikit-learn",
+    "tag_familly": "Web, IA"
+  },
+  {
+    "image": "/images/projects/DASMA.png",
+    "title": "Drift",
+    "description": "A Concept drift detector for anomaly detection",
+    "link": "https://dasma.limos.fr/",
+    "tools": "Flask, Tensorflow, Aeon",
+    "tag_familly":"IA"
+  }
+]
