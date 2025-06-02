@@ -18,6 +18,33 @@
 
     if (window.innerWidth > MOBILE_BREAKPOINT) {
       gsap.registerPlugin(ScrollTrigger);
+      function initSmoothScrolling() {
+        // Create smooth scrolling effect
+        gsap.set('body', {
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+        });
+
+        // Get total scroll height
+        const totalHeight = document.getElementsByName('body').offsetHeight;
+        document.body.style.height = totalHeight + "px";
+
+        // Smooth scroll animation
+        let scrollTween = gsap.to('body', {
+          y: () => -(totalHeight - window.innerHeight),
+          ease: "none",
+          scrollTrigger: {
+            trigger: document.body,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1, // Smooth scrubbing
+            invalidateOnRefresh: true,
+            
+          },
+        });
+      }
 
       function initGenericAnimations() {
         // Pull from left animation - stays visible after first appearance
@@ -120,7 +147,7 @@
   </div>
 
   <Title content="My career journey and technical expertise" />
-  <div class="m-auto flex justify-center items-center gap-4 my-10" id="resume">
+  <div class="m-auto flex justify-center items-center gap-4 my-10">
     <a
       class="inline-flex m-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-white text-neutral-900 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
       href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing"
@@ -142,7 +169,7 @@
     </a>
   </div>
 
-  <div class="pull-right">
+  <div class="pull-right" id="resume">
     <WorkExp />
   </div>
   <Title content="Scientific publications" />

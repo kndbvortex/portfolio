@@ -41,7 +41,7 @@
     </div>
 
     <!--Copyright section-->
-    <div class="p-4 text-center">
+    <div class="p-4 text-center text-primary-foreground">
       © 2025 Copyright:
       <p class="text-whitehite">Durande Kamga</p>
     </div>
