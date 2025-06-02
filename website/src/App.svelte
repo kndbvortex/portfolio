@@ -11,40 +11,19 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import { Toaster } from "$lib/components/ui/sonner/index.js";
   import Footer from "$lib/components/Footer.svelte";
+  import Lenis from 'lenis'
 
   onMount(() => {
-    // Define a breakpoint for mobile devices
-    const MOBILE_BREAKPOINT = 768; // Adjust this value as needed (e.g., 600, 992)
+    gsap.registerPlugin(ScrollTrigger);
+    const MOBILE_BREAKPOINT = 768; 
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const lenis = Lenis();
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add((time) => {lenis.raf(time*1000)})
+    } )
 
     if (window.innerWidth > MOBILE_BREAKPOINT) {
-      gsap.registerPlugin(ScrollTrigger);
-      function initSmoothScrolling() {
-        // Create smooth scrolling effect
-        gsap.set('body', {
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-        });
-
-        // Get total scroll height
-        const totalHeight = document.getElementsByName('body').offsetHeight;
-        document.body.style.height = totalHeight + "px";
-
-        // Smooth scroll animation
-        let scrollTween = gsap.to('body', {
-          y: () => -(totalHeight - window.innerHeight),
-          ease: "none",
-          scrollTrigger: {
-            trigger: document.body,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1, // Smooth scrubbing
-            invalidateOnRefresh: true,
-            
-          },
-        });
-      }
+      
 
       function initGenericAnimations() {
         // Pull from left animation - stays visible after first appearance
@@ -62,9 +41,8 @@
               ease: "power2.out",
               scrollTrigger: {
                 trigger: element,
-                start: "top",
-                end: "bottom",
-                toggleActions: "play reverse play none",
+                scrub:true,
+                toggleActions: "play reverse play reverse",
               },
             }
           );
@@ -75,20 +53,18 @@
           gsap.fromTo(
             element,
             {
-              opacity: 0,
+              opacity: 0.5,
               x: 100,
             },
             {
               opacity: 1,
               x: 0,
-              duration: 0.7,
+              duration: 0.3,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: element,
-                start: "top",
-                end: "bottom",
+                scrub:true,
                 toggleActions: "restart none restart none",
-                once: true,
               },
             }
           );
@@ -106,12 +82,11 @@
               opacity: 1,
               scale: 1,
               duration: 0.8,
-              ease: "back.out(1.7)",
+              ease: "back.out(0.5)",
               scrollTrigger: {
                 trigger: element,
-                start: "top",
-                end: "bottom",
                 toggleActions: "play reverse play none",
+                scrub:true
               },
             }
           );
@@ -173,7 +148,7 @@
     <WorkExp />
   </div>
   <Title content="Scientific publications" />
-  <div class="">
+  <div class="appear-center">
     <Publications />
   </div>
 </main>

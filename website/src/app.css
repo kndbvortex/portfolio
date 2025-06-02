@@ -122,8 +122,9 @@
 
     body {
         @apply bg-background text-foreground;
-        background-color: #0A0C0C;
+        background-color: hsl(180, 9%, 4%);
         scroll-behavior: smooth;
+        mask: inset(0 0 0 0);
     }
     html{
         scroll-behavior: smooth;
