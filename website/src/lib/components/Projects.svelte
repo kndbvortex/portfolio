@@ -45,7 +45,7 @@
         <p class="block text-primary-foreground text-3xl">Tags</p>
     </div>
 
-    <div class="flex items-center justify-center mx-50">
+    <div class="flex items-center justify-center md:mx-50 ">
         <div class="items-stretch justify-center grid grid-cols-3 gap-4 ">
             <Button 
                     variant='secondary' 

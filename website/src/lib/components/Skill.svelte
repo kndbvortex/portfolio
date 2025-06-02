@@ -22,7 +22,19 @@
                     headaches."/>
 
             <!-- Content grid -->
+            <div class="w-full sm:w-1/3 px-2.5 flex align-center justify-center">
+                <img
+                        id="img-card-hero"
+                        alt="Profile"
+                        loading="lazy"
+                        class="hover:cursor-pointer aspect-square rounded-2xl object-cover sm:mx-0 m-12 h-50 w-36 rotate-6 shadow-foreground shadow-2xl"
+                        src="/images/pexels-pixabay-531756.jpg"
+                        style="color: transparent"/>
+
+            </div>
             <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+                
                 <!-- Left column - Description -->
                 <div class="space-y-8">
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -33,6 +45,10 @@
                         From concept to launch, I handle every step of the process, ensuring it's smooth and
                         hassle-free, so
                         you can focus on your business.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Beyond tech, I'm into anime, running, and gaming. <br/>Let's create something awesome!
+
                     </p>
                 </div>
 

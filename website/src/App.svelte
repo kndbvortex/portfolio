@@ -33,8 +33,8 @@
                     scrollTrigger: {
                         trigger: element,
                         start: "top",
-                        end: "bottom top",
-                        toggleActions: "restart none none none", // Only play once
+                        end: "bottom",
+                        toggleActions: "play reverse play none", // Only play once
                     }
                 });
             });
@@ -51,8 +51,8 @@
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: element,
-                        start: "top bottom-50px",
-                        end: "bottom top",
+                        start: "top",
+                        end: "bottom",
                         toggleActions: "restart none restart none", // Only play once
                         once: true, // Alternative approach
                     }
@@ -106,15 +106,15 @@
 <main>
     <Hero/>
     <Title content="Projects that I have worked on, showcasing my skills in web development and data science."/>
-    <div class="appear-center">
+    <div class="appear-center" id="projects">
         <Projects/>
     </div>
-    <div class="pull-left">
+    <div class="pull-left" id='about'>
         <Skill/>
     </div>
 
-    <Title content="My career journey and technical expertise"/>
-    <div class="m-auto flex justify-center items-center gap-4 my-10">
+    <Title content="My career journey and technical expertise" />
+    <div class="m-auto flex justify-center items-center gap-4 my-10" id="resume">
 
         <a class="inline-flex m-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-white text-neutral-900  hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
            href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing" target="_blank">Download
