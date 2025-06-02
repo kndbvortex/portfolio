@@ -12,7 +12,7 @@
         // Create scroll-triggered animation
         gsap.fromTo(textElement,
             {
-                opacity: 0,
+                opacity: 0.5,
                 y: 30,
                 scale: 0.95
             },
@@ -20,7 +20,7 @@
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 0.5,
+                duration: 0.8,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: textElement,
@@ -33,7 +33,7 @@
     });
 </script>
 
-<div class="text-center my-5">
+<div class="text-center my-5 px-1">
     <h1
         bind:this={textElement}
         class="text-primary-foreground text-3xl md:text-2xl lg:text-3xl font-normal leading-tight max-w-5xl mx-auto mt-5 md:mt-0"

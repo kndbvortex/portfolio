@@ -82,7 +82,7 @@
                     <a href={project.link} target="_blank" class="link flex flex-jc-sb flex-ai-c">
                         <span class="text">{project.title + ": " + project.description}</span><br/>
                         {#each project.tools.split(',') as tool}
-                            <Badge variant="secondary" class="z-[5000]">{tool}</Badge>
+                            <Badge variant="secondary" class="hidden md:block z-[5000]">{tool}</Badge>
                             
                         {/each}
                         <img src="https://raw.githubusercontent.com/ViktoriiaZaichuk/image-reveal-on-hover/f336e307e7701393e1e63ae4ddb5cb3eb2af27dd/assets/img/arrow-black-right.svg"
