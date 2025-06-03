@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
   import Model3d from "$lib/components/Model3d.svelte";
-  import { MessageSquareMore, Twitter } from "lucide-svelte";
+  import { MessageSquareMore, Twitter, MapPin } from "lucide-svelte";
   import * as Avatar from "$lib/components/ui/avatar";
   import * as Drawer from "$lib/components/ui/drawer";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
@@ -18,7 +18,18 @@
   let role: HTMLHeadingElement;
 
   onMount(() => {
-    // Animate my name
+
+    gsap.from("#location", 1.8, {
+      y: 100,
+      ease: "power4.out",
+      delay: 1,
+      skewY: 7,
+      stagger: {
+        amount: 0.3
+      },
+      opacity:0
+    })
+        // Animate my name
     const split = new SplitText(textElement, {
       type: "words, chars",
     });
@@ -192,11 +203,15 @@
     >
       <span bind:this={textElement}>Hi, I'm Durande Kamga,</span><br />
       <span class="text-xl">
-        <WavyText text="Developer |" />
+        <WavyText text="Backend developer |" />
         <WavyText text="Data scientist |" />
-        <WavyText text="XAI Researcher" /></span
+        <WavyText text="XAI researcher" /></span
       >
     </h1>
+
+    <p class="text-md mb-2 -mt-2 font-semibold p-3 opacity-90 flex" id="location">
+      <MapPin class="h-4 inline m-auto" /> <WavyText text="Based in France" />
+    </p>
 
     <p
       class="text-md leading-relaxed opacity-80 mb-12 max-w-2xl small-description"
@@ -205,6 +220,7 @@
       interpretability.<br />
       Built fast, designed to convert, ready to grow.
     </p>
+    
 
     <div
       class="model-3d hidden md:block absolute inset-0 z-50 top-1/3 left-3/4"

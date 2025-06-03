@@ -35,7 +35,7 @@
             element,
             {
               autoAlpha: 0,
-              xPercent: -100,
+              xPercent: -30,
             },
             {
               autoAlpha: 1,
@@ -131,42 +131,56 @@
 
 <main>
   <Hero />
+
   <Title
     content="Projects that I have worked on, showcasing my skills in web development and data science."
   />
   <div class="appear-center" id="projects">
     <Projects />
   </div>
-  <div class="pull-left" id="about">
+
+  <div id="about">
+    <Title
+      content="I handle everything from design to development – without endless meetings. Saving you time and
+                    headaches."
+    />
+  </div>
+
+  <div class="pull-left">
     <Skill />
   </div>
 
-  <Title content="My career journey and technical expertise" />
-  <div class="m-auto flex justify-center items-center gap-4 my-10">
-    <a
-      class="inline-flex m-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-white text-neutral-900 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
-      href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing"
-      target="_blank"
-      >Download CV
-      <svg
-        viewBox="0 0 16 16"
-        fill="none"
-        aria-hidden="true"
-        class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
-      >
-        <path
-          d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </a>
+  <div id="resume">
+    <Title content="My career journey and technical expertise" />
+    <div class="m-auto flex justify-center items-center gap-4 my-10">
+      <a
+        class="inline-flex m-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-white text-neutral-900 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
+        href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing"
+        target="_blank"
+        >Download CV
+        <svg
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
+          class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
+        >
+          <path
+            d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </a>
+    </div>
   </div>
 
-  <div class="pull-right" id="resume">
+  <div class="pull-right">
     <WorkExp />
   </div>
+
+  
+
   <Title content="Scientific publications" />
   <div class="appear-center">
     <Publications />

@@ -1,5 +1,5 @@
 <script>
-  import {Mail, Map} from 'lucide-svelte'
+  import {Mail, MapPin} from 'lucide-svelte'
 
 </script>
 
@@ -50,7 +50,7 @@
       </div>
       <div class="p-4 text-primary-foreground">
         <p class="text-xl font-medium mb-3">Contact</p>
-        <p class="text-sm"><Map class="inline  mr-3 h-6"/>France, Douai</p>
+        <p class="text-sm"><MapPin class="inline  mr-3 h-6"/>France, Douai</p>
         <p class="text-sm"><Mail class="inline mr-3 h-6"/><a href="mailto:kamga.nixtinc@gmail.com">kamga.nixtinc@gmail.com</a></p>
       </div>
     </div>
