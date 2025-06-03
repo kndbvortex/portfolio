@@ -8,7 +8,11 @@
             image: "/images/icons/djangoproject-svgrepo-com (1).svg"
         },
         {
-            name:"React",
+            name:"FastAPI",
+            image: "/images/icons/FastAPI.svg"
+        },
+        {
+            name:"React & React Native",
             image: "/images/icons/react-svgrepo-com.svg"
         },
         {
@@ -107,7 +111,7 @@
                         </div>
                         <ul class="space-y-3 border-l-1 border-blue-500 pl-5">
                             {#each developmentServices as service}
-                                <li class="text-white md:hover:scale-110 transition-all md:cursor-pointer"><img class="h-8 inline mr-2" src={service.image} alt={service.name} /><span>{service.name}</span></li>
+                                <li class="text-white text-xs md:text-sm md:hover:scale-110 transition-all md:cursor-pointer"><img class="h-8 inline mr-2" src={service.image} alt={service.name} /><span>{service.name}</span></li>
                             {/each}
                         </ul>
                         <!-- Working With Services -->
