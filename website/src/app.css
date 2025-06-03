@@ -124,7 +124,10 @@
 
         body {
             color: var(--color-gray-400);
-            background-color: hsl(180, 9%, 4%);   
+            background-color: hsl(180, 9%, 4%);  
+        }
+        html{
+            scroll-behavior: smooth;
         }
 
 
