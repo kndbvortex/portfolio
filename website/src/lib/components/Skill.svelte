@@ -12,13 +12,17 @@
             image: "/images/icons/FastAPI.svg"
         },
         {
-            name:"React & React Native",
+            name:"React",
             image: "/images/icons/react-svgrepo-com.svg"
         },
         {
             name:"Svelte",
             image: "/images/icons/svelte-svgrepo-com.svg"
-        }
+        },
+        {
+            name:"React Native",
+            image: "/images/icons/react-svgrepo-com.svg"
+        },
     ];
     const clientTypes = [
         {
@@ -39,6 +43,9 @@
         {
             name:"Docker",
             image: "/images/icons/docker-svgrepo-com.svg"
+        },{
+            name:"PostgreSQL",
+            image: "/images/icons/Postgresql_elephant.svg"
         },{
             name:"Git/Github",
             image: "/images/icons/git-svgrepo-com.svg"
@@ -106,7 +113,7 @@
                         <div class="flex items-center gap-3 mb-6">
                             <div class="flex items-center gap-2  border border-blue-500/30 rounded-full px-4 py-2 md:hover:shadow-sm md:hover:shadow-blue-500 md:hover:cursor-pointer">
                                 <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                <span class="text-blue-200 text-sm font-medium capitalize tracking-wider">Web</span>
+                                <span class="text-blue-200 text-sm font-medium capitalize tracking-wider">Web & Mobile</span>
                             </div>
                         </div>
                         <ul class="space-y-3 border-l-1 border-blue-500 pl-5">

@@ -203,9 +203,8 @@
     >
       <span bind:this={textElement}>Hi, I'm Durande Kamga,</span><br />
       <span class="text-xl">
-        <WavyText text="Backend developer |" />
-        <WavyText text="Data scientist |" />
-        <WavyText text="XAI researcher" /></span
+        <WavyText text="Backend developer &" />
+        <WavyText text="Data scientist" /></span
       >
     </h1>
 
