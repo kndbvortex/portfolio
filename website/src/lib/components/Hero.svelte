@@ -150,11 +150,11 @@
     <!-- Main content -->
     <div class="flex flex-col items-center justify-center text-center md:px-8 relative z-10">
         <!-- Profile image -->
-        <Avatar.Root class="hidden md:block mt-50">
+        <Avatar.Root class="hidden md:block md:mt-50">
             <Avatar.Image src="/images/image_cv.png" alt="Profile"/>
             <Avatar.Fallback>DK</Avatar.Fallback>
         </Avatar.Root>
-        <div class="rocher-image mx-3 md:block md:absolute md:inset-0 md:top-1/3 md:left-20">
+        <div class="rocher-image mt-10 md:mt-0 mx-3 md:block md:absolute md:inset-0 md:top-1/3 md:left-20">
             <img id="img" src="/images/rocher-1.jpg" alt="rocher"
                  class="hover:cursor-pointer rocher-image rotate-12 md:-rotate-[30deg] h-[30vh] md:h-auto md:w-52 rounded-3xl">
             <div>
