@@ -11,38 +11,45 @@
   import Navbar from "$lib/components/Navbar.svelte";
   import { Toaster } from "$lib/components/ui/sonner/index.js";
   import Footer from "$lib/components/Footer.svelte";
-  import Lenis from 'lenis'
+  import Lenis from "lenis";
 
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const MOBILE_BREAKPOINT = 768; 
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const lenis = Lenis();
+    const MOBILE_BREAKPOINT = 768;
+    document.addEventListener("DOMContentLoaded", () => {
+      const lenis = new Lenis();
       lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add((time) => {lenis.raf(time*1000)})
-    } )
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+    });
 
     if (window.innerWidth > MOBILE_BREAKPOINT) {
-      
-
       function initGenericAnimations() {
         // Pull from left animation - stays visible after first appearance
         gsap.utils.toArray(".pull-left").forEach((element) => {
+          // Add overflow hidden when element is not visible
+          // gsap.set(element, { overflow: "hidden" });
+
           gsap.fromTo(
             element,
             {
-              opacity: 0,
-              x: -100,
+              autoAlpha: 0,
+              xPercent: -100,
             },
             {
-              opacity: 1,
-              x: 0,
+              autoAlpha: 1,
+              xPercent: 0,
               duration: 0.5,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: element,
-                scrub:true,
+                scrub: true,
                 toggleActions: "play reverse play reverse",
+                // onEnter: () => gsap.set(element, { overflow: "visible" }),
+                // onLeave: () => gsap.set(element, { overflow: "hidden" }),
+                // onEnterBack: () => gsap.set(element, { overflow: "visible" }),
+                // onLeaveBack: () => gsap.set(element, { overflow: "hidden" }),
               },
             }
           );
@@ -50,20 +57,26 @@
 
         // Pull from right animation - stays visible
         gsap.utils.toArray(".pull-right").forEach((element) => {
+          // Ensure parent container has overflow hidden
+          const parent = element.parentElement;
+          if (parent) {
+            gsap.set(parent, { overflowX: "hidden" });
+          }
+
           gsap.fromTo(
             element,
             {
-              opacity: 0.5,
-              x: 100,
+              scale: 0.8,
+              xPercent: 50,
             },
             {
-              opacity: 1,
-              x: 0,
+              scale: 1,
+              xPercent: 0,
               duration: 0.3,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: element,
-                scrub:true,
+                scrub: true,
                 toggleActions: "restart none restart none",
               },
             }
@@ -72,6 +85,9 @@
 
         // Appear from center - stays visible
         gsap.utils.toArray(".appear-center").forEach((element) => {
+          // Add overflow hidden when element is not visible
+          gsap.set(element, { overflow: "hidden" });
+
           gsap.fromTo(
             element,
             {
@@ -86,7 +102,11 @@
               scrollTrigger: {
                 trigger: element,
                 toggleActions: "play reverse play none",
-                scrub:true
+                scrub: true,
+                onEnter: () => gsap.set(element, { overflow: "visible" }),
+                onLeave: () => gsap.set(element, { overflow: "hidden" }),
+                onEnterBack: () => gsap.set(element, { overflow: "visible" }),
+                onLeaveBack: () => gsap.set(element, { overflow: "hidden" }),
               },
             }
           );

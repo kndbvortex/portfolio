@@ -73,7 +73,7 @@
 
                 <!-- Mobile menu button on top of page -->
 
-                <div class="md:hidden fixed left-4 top-10 text-primary-foreground z-[1000] border rounded-xl">
+                <div class="md:hidden fixed left-4 top-10  z-[1000] border rounded-xl">
                     <button aria-expanded="false"
                             class="group flex items-center rounded-full bg-transparent px-4 py-2 text-md font-medium"
                             onclick={toggleModalMenu} type="button">
@@ -96,7 +96,7 @@
                 <div class="fixed  backdrop-blur left-[40%]">
                     <nav class="hidden md:block m-auto">
                         <ul
-                                class="flex rounded-full px-3 font-medium text-primary-foreground">
+                                class="flex rounded-full px-3 font-medium ">
 
                             {#each Object.entries(links) as link}
                                 <li>
@@ -154,7 +154,7 @@
                         </path>
                     </svg>
                 </button>
-                <h2 class="text-sm font-medium text-primary-foreground">Navigation</h2>
+                <h2 class="text-sm font-medium ">Navigation</h2>
             </div>
 
             <!-- Navigation links -->
@@ -163,7 +163,7 @@
                     {#each Object.entries(links) as link}
                         <li>
                             <a href={link[1].href}
-                               class={`${isactive(link[1].label)? "text-primary underline" : "text-primary-foreground"} flex items-center py-3 text-base font-medium dark:text-zinc-200 hover:text-primary dark:hover:text-primary capitalize`}
+                               class={`${isactive(link[1].label)? "text-primary underline" : ""} flex items-center py-3 text-base font-medium dark:text-zinc-200 hover:text-primary dark:hover:text-primary capitalize`}
                                onclick={toggleModalMenu}>
                                 {link[1].label}
                             </a>

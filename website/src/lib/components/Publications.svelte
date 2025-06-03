@@ -23,7 +23,7 @@
 {#snippet PublicationComponent(article: Article)}
   <a
     href={article.link}
-    class="block bg-gray-500/10 border-white p-5 mx-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-md hover:shadow-slate-400"
+    class="block bg-transparent border-1 border-gray-400 shadow-gray-400 shadow-xs  p-5 mx-3 rounded-xl hover:shadow-lg transition-all hover:scale-105 hover:shadow-gray-400"
   >
     <img
       src={article.image}
@@ -31,11 +31,11 @@
       alt={article.title}
     />
     <h2 class="text-lg font-semibold mt-3 text-primary-foreground">{article.title}</h2>
-    <p class="text-sm text-gray-600">{article.author} - {article.year}</p>
-    <p class="text-xs text-gray-500 mt-2">
+    <p class="text-sm ">{article.author} - {article.year}</p>
+    <p class="text-xs  mt-2">
       {article.abstract.substring(0, 100)}...
     </p>
-    <span class="block mt-3 text-primary hover:underline">Read More</span>
+    <span class="block mt-3 text-red-400 hover:underline">Read More</span>
   </a>
 {/snippet}
 

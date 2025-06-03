@@ -64,7 +64,7 @@
                 <!-- Company logo(s) -->
                 <div class="flex flex-shrink-0 flex-col gap-2">
                   {#each experience.logos as logo}
-                    <div class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-gray-200 bg-white/90 p-1 dark:border-white">
+                    <div class="flex flex-row h-12 w-12 items-center justify-center overflow-hidden rounded-full border  bg-white p-1">
                       <img src={logo} alt={`${experience.company} logo`} class="max-h-full max-w-full object-contain" />
                     </div>
                   {/each}
@@ -72,20 +72,20 @@
 
                 <!-- Experience details -->
                 <div class="flex-grow">
-                  <p class="font-medium text-primary-600 dark:text-primary-400">{experience.date}</p>
+                  <p class="opacity-60">{experience.date}</p>
 
                   <div class="mt-2">
-                    <h4 class="text-lg font-semibold">
-                      <a href={experience.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                    <h4 class="text-md">
+                      <a href={experience.link} target="_blank" rel="noopener noreferrer" class="hover:underline mt-5">
                         {experience.title}
                       </a>
                     </h4>
 
                     {#if experience.description}
-                      <p class="text-primary-foreground/50">{experience.description}</p>
+                      <p class="opacity-60 text-sm mt-3">{experience.description}</p>
                     {/if}
 
-                    <p class="font-medium text-primary-foreground/70 hover:underline dark:text-slate-50">
+                    <p class="hover:underline text-sm opacity-90">
                       <a href={experience.link} target="_blank" rel="noopener noreferrer">
                         {experience.company}
                       </a>

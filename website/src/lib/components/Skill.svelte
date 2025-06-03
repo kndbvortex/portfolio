@@ -9,7 +9,7 @@
 
 
 <section>
-    <div class="text-primary-foreground min-h-screen relative text-sm max-w-5xl m-auto">
+    <div class="min-h-screen relative text-sm max-w-5xl m-auto">
         <!-- Corner dots -->
         <div class="absolute top-8 left-8 w-1 h-1 bg-white rounded-full"></div>
         <div class="absolute top-8 right-8 w-1 h-1 bg-white rounded-full"></div>
@@ -37,11 +37,11 @@
                 
                 <!-- Left column - Description -->
                 <div class="space-y-8">
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed">
                         I'm a web developer and data scientist ready to contribute to dynamic projects. My goal is to build functional and data-driven web solutions that prioritize tangible outcomes for users and businesses
                     </p>
 
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed">
                         From concept to launch, I handle every step of the process, ensuring it's smooth and
                         hassle-free, so
                         you can focus on your business.
