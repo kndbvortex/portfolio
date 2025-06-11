@@ -12,7 +12,7 @@
         // Create scroll-triggered animation
         gsap.fromTo(textElement,
             {
-                opacity: 0.5,
+                opacity: 0.85,
                 y: 30,
                 scale: 0.95
             },

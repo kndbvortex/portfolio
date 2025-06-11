@@ -17,11 +17,16 @@
     gsap.registerPlugin(ScrollTrigger);
     const MOBILE_BREAKPOINT = 768;
     document.addEventListener("DOMContentLoaded", () => {
-      const lenis = new Lenis();
+      const lenis = new Lenis({
+        autoRaf: true,
+        lerp: 0.3,
+        anchors: true
+      });
       lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
       });
+      gsap.ticker.lagSmoothing(0);
     });
 
     if (window.innerWidth > MOBILE_BREAKPOINT) {
@@ -35,11 +40,15 @@
             element,
             {
               autoAlpha: 0,
-              xPercent: -30,
+              xPercent: -10,
+              rotate: -5,
+              scale: 0.6,
             },
             {
               autoAlpha: 1,
               xPercent: 0,
+              rotate: 0,
+              scale: 1,
               duration: 0.5,
               ease: "power2.out",
               scrollTrigger: {
@@ -66,11 +75,14 @@
           gsap.fromTo(
             element,
             {
-              scale: 0.8,
-              xPercent: 50,
+              scale: 0.5,
+              rotate:5,
+              xPercent: 20,
+              
             },
             {
               scale: 1,
+              rotate:0,
               xPercent: 0,
               duration: 0.3,
               ease: "power2.out",
@@ -80,6 +92,7 @@
                 toggleActions: "restart none restart none",
               },
             }
+
           );
         });
 
@@ -92,11 +105,13 @@
             element,
             {
               opacity: 0,
-              scale: 0.5,
+              scale: 0.7,
+              rotate: 10,
             },
             {
               opacity: 1,
               scale: 1,
+              rotate: 0,
               duration: 0.8,
               ease: "back.out(0.5)",
               scrollTrigger: {
@@ -114,6 +129,10 @@
       }
 
       initGenericAnimations();
+    }
+    else{
+      console.log("Mobile view detected, skipping animations.");
+      
     }
   });
 </script>

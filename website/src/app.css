@@ -123,12 +123,13 @@
     }
 
         body {
-            color: var(--color-gray-400);
-            background-color: hsl(180, 9%, 4%);  
+            color: #9DA9B4;
+            background-color: hsl(160, 27%, 2%); 
+            background-image: url("/images/nnnoise.svg"); 
         }
-        html{
+        /* html{
             scroll-behavior: smooth;
-        }
+        } */
 
 
     .text-5xl {

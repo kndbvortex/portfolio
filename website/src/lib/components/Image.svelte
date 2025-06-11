@@ -4,7 +4,6 @@
   import { cn } from '$lib/utils'; // Assuming you have a utility for combining classes
 
   export let src = '/images/rocher-1.jpg';
-  export let alt = 'rocher';
   export let className: string = ''; // Renamed from className to class for Svelte best practices
 
   let container: HTMLElement; // Use HTMLElement for better type clarity

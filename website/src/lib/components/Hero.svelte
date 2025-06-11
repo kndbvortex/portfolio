@@ -175,7 +175,7 @@
 </script>
 
 <div
-  class="min-h-[100vh] w-full hero-bg text-primary-foreground/95 text-sm relative"
+  class="min-h-[100vh] w-full hero-bg text-primary-foreground text-sm relative"
 >
   <!-- Main content -->
   <div
@@ -213,7 +213,7 @@
     </p>
 
     <p
-      class="text-md leading-relaxed opacity-80 mb-12 max-w-2xl small-description"
+      class="text-md leading-relaxed mb-12 max-w-2xl small-description"
     >
       I build efficient backend systems and develop AI models with a focus on
       interpretability.<br />
@@ -272,16 +272,16 @@
       class="z-20 mt-6 flex flex-wrap items-center justify-start gap-6 relative"
     >
       <a
-        class="group rounded-full m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl hover:shadow-primary/50 hover:drop-shadow-xl/25 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        class="group rounded-full m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl hover:drop-shadow-xl/25 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
         aria-label="Follow on X"
         target="_blank"
         href="https://x.com/DurandeKamga_"
       >
-        <Twitter class="h-10 w-10" />
+        <Twitter class="h-10 w-10 bg-transparent" />
       </a>
       •
       <a
-        class="group rounded-full -m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl hover:shadow-primary/50 hover:drop-shadow-xl/25 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        class="group rounded-full -m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl hover:drop-shadow-xl/25 ease-in group-hover:fill-text-gray dark:fill-zinc-400 dark:group-hover:fill-text-gray"
         aria-label="Follow on GitHub"
         target="_blank"
         href="https://github.com/kndbvortex"
@@ -302,7 +302,7 @@
       •
 
       <a
-        class="group rounded-full m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl hover:shadow-primary/50 hover:drop-shadow-xl/25 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        class="group rounded-full m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl hover:drop-shadow-xl/25 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
         aria-label="Follow on LinkedIn"
         target="_blank"
         href="https://linkedin.com/in/durande-kamga-3660bb202"
@@ -320,7 +320,7 @@
       </a>
       •
       <a
-        class="group rounded-full m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl hover:shadow-primary/50 hover:drop-shadow-xl/25 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        class="group rounded-full m-1 p-1 hover:scale-150 transition-all hover:shadow-2xl  hover:drop-shadow-xl/25 ease-in group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
         aria-label="Follow on Upwork"
         target="_blank"
         href="https://www.upwork.com/freelancers/~01ab827b08d6581cf9"

@@ -3,21 +3,21 @@
 
 </script>
 
-<div class="h-[1px] bg-gradient-to-r from-transparent via-gray-50 to-transparent"></div>
+<div class="h-[1px] bg-gradient-to-r from-transparent via-gray-50 to-transparent text-sm"></div>
 <footer class=" mt-5"
     id="contact">
 
-    <div class="flex  justify-around text-primary-foreground">
+    <div class="flex  justify-around">
       <div class="m-5 grid grid-cols-1 gap-4">
         <div>Durande KAMGA</div>
-        <div>Web developer | Datascientist </div>
-        <div>
+        <div class="text-xs" >Web developer | Data scientist </div>
+        <div class="text-xs">
           Quick link :
           
           <div class="flex flex-row">
             <a href="https://twitter.com/DurandeKamga_" type="button"
                  aria-label="twitter"
-                class="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal text-primary-foreground dark:text-gray-100 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                class="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal  dark:text-gray-100 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                 data-te-ripple-init data-te-ripple-color="light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -28,7 +28,7 @@
       
               <a href="https://www.linkedin.com/in/durande-kamga-3660bb202/" type="button"
                  aria-label="linkedin"
-                class="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal  text-primary-foreground dark:text-gray-100 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                class="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal   dark:text-gray-100 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                 data-te-ripple-init data-te-ripple-color="light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -38,7 +38,7 @@
       
               <a href="https://github.com/kndbvortex/" type="button"
                  aria-label="Github"
-                class="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal text-primary-foreground dark:text-gray-100 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                class="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal  dark:text-gray-100 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                 data-te-ripple-init data-te-ripple-color="light">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-full w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -48,10 +48,10 @@
           </div>
         </div>
       </div>
-      <div class="p-4 text-primary-foreground">
+      <div class="p-4">
         <p class="text-xl font-medium mb-3">Contact</p>
-        <p class="text-sm"><MapPin class="inline  mr-3 h-6"/>France, Douai</p>
-        <p class="text-sm"><Mail class="inline mr-3 h-6"/><a href="mailto:kamga.nixtinc@gmail.com">kamga.nixtinc@gmail.com</a></p>
+        <p class="text-xs"><MapPin class="inline  mr-3 h-6"/>France, Douai</p>
+        <p class="text-xs"><Mail class="inline mr-3 h-6"/><a href="mailto:kamga.nixtinc@gmail.com">kamga.nixtinc@gmail.com</a></p>
       </div>
     </div>
 

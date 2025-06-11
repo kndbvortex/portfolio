@@ -59,12 +59,12 @@
 
 <header class="relative z-50 text-md">
 
-    <div class="container mx-auto max-w-7xl px-4 sm:px-8 lg:px-12 bg-transparent">
+    <div class="container mx-auto max-w-7xl px-4 sm:px-8 lg:px-12 bg-transparent h-10">
 
         <div class="mx-auto max-w-5xl">
-            <a class="flex items-center space-x-3" href="/">
-                <img alt="logo" class="w-10 h-10 rounded-full object-contain" src="/images/logo.png">
-            </a>
+            <span class="flex items-center space-x-3 h-10">
+                
+            </span>
             <!-- Navigation -->
             <div class="flex items-center justify-end md:justify-between">
                 <div class="hidden md:block">

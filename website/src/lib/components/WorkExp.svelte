@@ -72,20 +72,20 @@
 
                 <!-- Experience details -->
                 <div class="flex-grow">
-                  <p class="opacity-60">{experience.date}</p>
+                  <p class="text-gray-400">{experience.date}</p>
 
                   <div class="mt-2">
                     <h4 class="text-md">
-                      <a href={experience.link} target="_blank" rel="noopener noreferrer" class="hover:underline mt-5">
+                      <a href={experience.link} target="_blank" rel="noopener noreferrer" class="hover:underline mt-5 text-gray-300">
                         {experience.title}
                       </a>
                     </h4>
 
                     {#if experience.description}
-                      <p class="opacity-60 text-sm mt-3">{experience.description}</p>
+                      <p class="text-gray-400 text-sm mt-3">{experience.description}</p>
                     {/if}
 
-                    <p class="hover:underline text-sm opacity-90">
+                    <p class="hover:underline text-sm text-gray-400">
                       <a href={experience.link} target="_blank" rel="noopener noreferrer">
                         {experience.company}
                       </a>
