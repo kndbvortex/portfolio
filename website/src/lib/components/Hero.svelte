@@ -216,7 +216,7 @@
     >
       I build efficient backend systems and develop AI models with a focus on
       interpretability.<br />
-      Built fast, designed to convert, ready to grow.
+      Built fast, designed to convert, ready to grow!
     </p>
     
 
