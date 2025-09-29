@@ -192,7 +192,7 @@
         id="img"
         src="/images/dark_my_image_.png"
         alt="rocher"
-        class="hover:cursor-pointer object-cover rocher-image  h-[30vh] md:h-48 md:w-48 rounded-full"
+        class="hover:cursor-pointer object-cover rocher-image w-48 h-48 md:h-48 md:w-48 rounded-full"
       />
       <div></div>
     </div>
