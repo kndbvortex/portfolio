@@ -20,7 +20,7 @@
       const lenis = new Lenis({
         autoRaf: true,
         lerp: 0.3,
-        anchors: true
+        anchors: true,
       });
       lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.add((time) => {
@@ -31,97 +31,25 @@
 
     if (window.innerWidth > MOBILE_BREAKPOINT) {
       function initGenericAnimations() {
-        // Pull from left animation - stays visible after first appearance
-        gsap.utils.toArray(".pull-left").forEach((element) => {
-          // Add overflow hidden when element is not visible
-          // gsap.set(element, { overflow: "hidden" });
-
-          gsap.fromTo(
-            element,
-            {
-              autoAlpha: 0,
-              xPercent: -10,
-              rotate: -5,
-              scale: 0.6,
-            },
-            {
-              autoAlpha: 1,
-              xPercent: 0,
-              rotate: 0,
-              scale: 1,
-              duration: 0.5,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: element,
-                scrub: true,
-                toggleActions: "play reverse play reverse",
-                // onEnter: () => gsap.set(element, { overflow: "visible" }),
-                // onLeave: () => gsap.set(element, { overflow: "hidden" }),
-                // onEnterBack: () => gsap.set(element, { overflow: "visible" }),
-                // onLeaveBack: () => gsap.set(element, { overflow: "hidden" }),
-              },
-            }
-          );
-        });
-
-        // Pull from right animation - stays visible
-        gsap.utils.toArray(".pull-right").forEach((element) => {
-          // Ensure parent container has overflow hidden
-          const parent = element.parentElement;
-          if (parent) {
-            gsap.set(parent, { overflowX: "hidden" });
-          }
-
-          gsap.fromTo(
-            element,
-            {
-              scale: 0.5,
-              rotate:5,
-              xPercent: 20,
-              
-            },
-            {
-              scale: 1,
-              rotate:0,
-              xPercent: 0,
-              duration: 0.3,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: element,
-                scrub: true,
-                toggleActions: "restart none restart none",
-              },
-            }
-
-          );
-        });
-
-        // Appear from center - stays visible
-        gsap.utils.toArray(".appear-center").forEach((element) => {
+        gsap.utils.toArray(".appear").forEach((element) => {
           // Add overflow hidden when element is not visible
           gsap.set(element, { overflow: "hidden" });
 
           gsap.fromTo(
             element,
             {
-              opacity: 0,
-              scale: 0.7,
-              rotate: 10,
+              opacity: 0.5,
+              rotate: 3,
             },
             {
               opacity: 1,
-              scale: 1,
               rotate: 0,
-              duration: 0.8,
+              duration: 0.2,
               ease: "back.out(0.5)",
               scrollTrigger: {
                 trigger: element,
-                toggleActions: "play reverse play none",
+                toggleActions: "play none none none",
                 scrub: true,
-                onEnter: () => gsap.set(element, { overflow: "visible" }),
-                onLeave: () => gsap.set(element, { overflow: "hidden" }),
-                onEnterBack: () => gsap.set(element, { overflow: "visible" }),
-                onLeaveBack: () => gsap.set(element, { overflow: "hidden" }),
               },
             }
           );
@@ -129,84 +57,83 @@
       }
 
       initGenericAnimations();
-    }
-    else{
+    } else {
       console.log("Mobile view detected, skipping animations.");
-      
     }
   });
+  let isLoading = true;
 </script>
 
-<div class="vertical-line line-20"></div>
-<div class="vertical-line line-80"></div>
 
-<div class="h-0">
-  <Navbar />
-</div>
+  <div class="vertical-line line-20"></div>
+  <div class="vertical-line line-80"></div>
 
-<div
-  class="h-[2px] bg-gradient-to-r from-transparent via-gray-50 to-transparent"
-></div>
-
-<main>
-  <Hero />
-
-  <Title
-    content="Projects that I have worked on, showcasing my skills in web development and data science."
-  />
-  <div class="appear-center" id="projects">
-    <Projects />
+  <div class="h-0">
+    <Navbar />
   </div>
 
-  <div id="about">
+  <div
+    class="h-[2px] bg-gradient-to-r from-transparent via-gray-50 to-transparent"
+  ></div>
+
+  <main>
+    <Hero />
+
     <Title
-      content="I handle everything from design to development – without endless meetings. Saving you time and
-                    headaches."
+      content="Projects that I have worked on, showcasing my skills in web development and data science."
     />
-  </div>
-
-  <div class="pull-left">
-    <Skill />
-  </div>
-
-  <div id="resume">
-    <Title content="My career journey and technical expertise" />
-    <div class="m-auto flex justify-center items-center gap-4 my-10">
-      <a
-        class="inline-flex m-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-white text-neutral-900 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
-        href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing"
-        target="_blank"
-        >Download CV
-        <svg
-          viewBox="0 0 16 16"
-          fill="none"
-          aria-hidden="true"
-          class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
-        >
-          <path
-            d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
-      </a>
+    <div class="appear" id="projects">
+      <Projects />
     </div>
-  </div>
 
-  <div class="pull-right">
-    <WorkExp />
-  </div>
+    <div id="about">
+      <Title
+        content="I handle everything from design to development – without endless meetings. Saving you time and
+                    headaches."
+      />
+    </div>
 
-  
+    <div class="appear">
+      <Skill />
+    </div>
 
-  <Title content="Scientific publications" />
-  <div class="appear-center">
-    <Publications />
-  </div>
-</main>
-<Footer />
-<Toaster />
+    <div id="resume">
+      <Title content="My career journey and technical expertise" />
+      <div class="m-auto flex justify-center items-center gap-4 my-10">
+        <a
+          class="inline-flex m-auto px-4 py-2 text-xs font-semibold duration-300 ease-out border rounded-full bg-white text-neutral-900 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900"
+          href="https://drive.google.com/drive/folders/1UULKeZx7lxILy56txQaABuT5XubmjN6K?usp=sharing"
+          target="_blank"
+          >Download CV
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"
+          >
+            <path
+              d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="appear">
+      <WorkExp />
+    </div>
+
+    <Title content="Scientific publications" />
+    <div class="appear">
+      <Publications />
+    </div>
+  </main>
+  <Footer />
+  <Toaster />
+
 
 <style>
   .vertical-line {

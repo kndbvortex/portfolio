@@ -364,6 +364,7 @@
   on:mousemove={handleMouseMove}
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}
+  role="img"
 >
   <div class="absolute -bottom-16 left-0 flex gap-2 z-10"> <button
       on:click={clearMask}
@@ -373,9 +374,10 @@
     </button>
 
     <div class="flex items-center gap-2">
-      <label class="text-xs text-gray-600">Brush:</label>
+      <label class="text-xs text-gray-600" for="brushSize">Brush:</label>
       <input
         type="range"
+        id="brushSize"
         min="0.15"
         max="0.4"
         step="0.01"

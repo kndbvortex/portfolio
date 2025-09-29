@@ -46,7 +46,7 @@
       title: "Assistant Trainer",
       company: "SEED SARL",
       description: "",
-      link: "https://gigalitic.com/",
+      link: "https://www.seeds.cm/",
       logos: ["https://www.seeds.cm/img/logo.png"]
     }
   ];

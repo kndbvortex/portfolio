@@ -31,7 +31,7 @@
       class="w-full h-48 object-cover opacity-65"
       alt={article.title}
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-[#020605]/80 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
     <!-- Extend gradient below image -->
     <div class="absolute -bottom-4 left-0 right-0 h-8 bg-gradient-to-t from-[#020605] to-transparent"></div>
   </div>
@@ -40,7 +40,7 @@
     <p class="text-xs mt-2">
       {article.abstract.substring(0, 100)}...
     </p>
-    <span class="text-sm mt-2 text-red-400 hover:underline">Read More</span>
+    <span class="text-sm mt-2 text-primary hover:underline">Read More</span>
   </a>
 {/snippet}
 

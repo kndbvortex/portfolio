@@ -182,18 +182,17 @@
     class="flex flex-col items-center justify-center text-center md:px-8 relative z-10"
   >
     <!-- Profile image -->
-    <Avatar.Root class="hidden md:block md:mt-50">
-      <Avatar.Image src="/images/image_cv.png" alt="Profile" />
-      <Avatar.Fallback>DK</Avatar.Fallback>
-    </Avatar.Root>
+      <div class="hidden md:block md:mt-30 xl:mt-50">
+
+      </div>
     <div
       class="rocher-image mt-10 md:mt-0 mx-3 md:block md:absolute md:inset-0 md:top-1/3 md:left-20"
     >
       <img
         id="img"
-        src="/images/rocher-1.jpg"
+        src="/images/dark_my_image_.png"
         alt="rocher"
-        class="hover:cursor-pointer rocher-image rotate-12 md:-rotate-[30deg] h-[30vh] md:h-auto md:w-52 rounded-3xl"
+        class="hover:cursor-pointer object-cover rocher-image  h-[30vh] md:h-48 md:w-48 rounded-full"
       />
       <div></div>
     </div>
@@ -227,7 +226,7 @@
       <img
         src="/images/left.jpg"
         alt="left"
-        class="left hover:cursor-pointer rotate-12 md:rotate-[30deg] h-[30vh] md:h-auto md:w-56 rounded-3xl"
+        class="left hover:cursor-pointer rotate-12 md:rotate-[30deg] h-[30vh] md:h-auto md:w-56 rounded-2xl"
         id="left_img"
       />
     </div>
